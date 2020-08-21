@@ -1,0 +1,14 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "solomon",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
