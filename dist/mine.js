@@ -6,6 +6,13 @@ const compHand=document.querySelector(".computer-hand");
 const playerHand=document.querySelector(".player-hand");
 const intro=document.querySelector(".intro");
 const game=document.querySelector(".game");
+const hands = document.querySelectorAll(".hands img");
+
+hands.forEach(hand => {
+  hand.addEventListener("animationend", function () {
+    hand.style.animation = "";
+  });
+});
 
 let cScore=0;
 let pScore=0;
@@ -30,11 +37,15 @@ buttons.forEach(button=>{
         console.log(compNumber);
         computerChoice=optionsArray[compNumber];
         playerChoice=this.textContent;
-       
+		
+       setTimeout(()=>{
         playerHand.src=`${playerChoice}.png`;
         compHand.src=` ${computerChoice}.png`;
         compareHands(button.textContent, computerChoice);
-       
+		
+        },2000);
+		 playerHand.style.animation="shakePlayer 2s ease";
+         compHand.style.animation="shakeComputer 2s ease";
         
     });
 });
